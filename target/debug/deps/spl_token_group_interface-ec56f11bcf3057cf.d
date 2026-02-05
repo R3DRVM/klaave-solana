@@ -1,0 +1,10 @@
+/Users/redrum/klaave-solana/target/debug/deps/spl_token_group_interface-ec56f11bcf3057cf.d: /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/state.rs
+
+/Users/redrum/klaave-solana/target/debug/deps/libspl_token_group_interface-ec56f11bcf3057cf.dylib: /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/state.rs
+
+/Users/redrum/klaave-solana/target/debug/deps/libspl_token_group_interface-ec56f11bcf3057cf.rlib: /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/state.rs
+
+/Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/lib.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/error.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/instruction.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.1.0/src/state.rs:

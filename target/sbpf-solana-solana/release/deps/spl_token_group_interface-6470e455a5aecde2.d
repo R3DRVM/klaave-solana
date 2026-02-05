@@ -1,0 +1,10 @@
+/Users/redrum/klaave-solana/target/sbpf-solana-solana/release/deps/spl_token_group_interface-6470e455a5aecde2.so: /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/state.rs
+
+/Users/redrum/klaave-solana/target/sbpf-solana-solana/release/deps/libspl_token_group_interface-6470e455a5aecde2.rlib: /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/state.rs
+
+/Users/redrum/klaave-solana/target/sbpf-solana-solana/release/deps/spl_token_group_interface-6470e455a5aecde2.d: /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/state.rs
+
+/Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/lib.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/error.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/instruction.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-group-interface-0.1.0/src/state.rs:

@@ -1,0 +1,10 @@
+/Users/redrum/klaave-solana/target/debug/deps/spl_token_metadata_interface-cf96576a27069c50.d: /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/state.rs
+
+/Users/redrum/klaave-solana/target/debug/deps/libspl_token_metadata_interface-cf96576a27069c50.dylib: /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/state.rs
+
+/Users/redrum/klaave-solana/target/debug/deps/libspl_token_metadata_interface-cf96576a27069c50.rlib: /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/lib.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/error.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/instruction.rs /Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/state.rs
+
+/Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/lib.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/error.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/instruction.rs:
+/Users/redrum/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.2.0/src/state.rs:

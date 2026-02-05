@@ -93,7 +93,7 @@ pub mod klaave {
         // Calculate credit limit: (bond * 2) + score - (failures * 10)
         let bond_factor = credit_score.bond_amount.checked_mul(2)
             .ok_or(ErrorCode::Overflow)?;
-        let failure_penalty = credit_score.failures.checked_mul(10_000_000) // 10 USDC per failure
+        let failure_penalty = (credit_score.failures as u64).checked_mul(10_000_000) // 10 USDC per failure
             .ok_or(ErrorCode::Overflow)?;
         
         let credit_limit = bond_factor
