@@ -1,0 +1,109 @@
+{
+  "version": "0.1.0",
+  "name": "klaave",
+  "instructions": [
+    {
+      "name": "initializePool",
+      "accounts": [
+        {"name": "pool", "isMut": true, "isSigner": false},
+        {"name": "authority", "isMut": true, "isSigner": true},
+        {"name": "usdcVault", "isMut": false, "isSigner": false},
+        {"name": "systemProgram", "isMut": false, "isSigner": false}
+      ],
+      "args": [
+        {"name": "poolBump", "type": "u8"}
+      ]
+    },
+    {
+      "name": "deposit",
+      "accounts": [
+        {"name": "pool", "isMut": true, "isSigner": false},
+        {"name": "usdcVault", "isMut": true, "isSigner": false},
+        {"name": "depositorUsdc", "isMut": true, "isSigner": false},
+        {"name": "depositor", "isMut": false, "isSigner": true},
+        {"name": "tokenProgram", "isMut": false, "isSigner": false}
+      ],
+      "args": [
+        {"name": "amount", "type": "u64"}
+      ]
+    },
+    {
+      "name": "postBond",
+      "accounts": [
+        {"name": "creditScore", "isMut": true, "isSigner": false},
+        {"name": "bondVault", "isMut": true, "isSigner": false},
+        {"name": "borrowerUsdc", "isMut": true, "isSigner": false},
+        {"name": "borrower", "isMut": true, "isSigner": true},
+        {"name": "tokenProgram", "isMut": false, "isSigner": false},
+        {"name": "systemProgram", "isMut": false, "isSigner": false}
+      ],
+      "args": [
+        {"name": "bondAmount", "type": "u64"},
+        {"name": "strategyAddress", "type": "publicKey"}
+      ]
+    },
+    {
+      "name": "borrow",
+      "accounts": [
+        {"name": "pool", "isMut": true, "isSigner": false},
+        {"name": "creditScore", "isMut": true, "isSigner": false},
+        {"name": "usdcVault", "isMut": true, "isSigner": false},
+        {"name": "borrowerUsdc", "isMut": true, "isSigner": false},
+        {"name": "borrower", "isMut": false, "isSigner": true},
+        {"name": "tokenProgram", "isMut": false, "isSigner": false}
+      ],
+      "args": [
+        {"name": "amount", "type": "u64"}
+      ]
+    },
+    {
+      "name": "updateEpoch",
+      "accounts": [
+        {"name": "creditScore", "isMut": true, "isSigner": false},
+        {"name": "keeper", "isMut": false, "isSigner": true}
+      ],
+      "args": [
+        {"name": "currentEquity", "type": "u64"}
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Pool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {"name": "authority", "type": "publicKey"},
+          {"name": "usdcVault", "type": "publicKey"},
+          {"name": "totalDeposits", "type": "u64"},
+          {"name": "totalBorrowed", "type": "u64"},
+          {"name": "bump", "type": "u8"}
+        ]
+      }
+    },
+    {
+      "name": "CreditScore",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {"name": "borrower", "type": "publicKey"},
+          {"name": "bondAmount", "type": "u64"},
+          {"name": "strategyAddress", "type": "publicKey"},
+          {"name": "borrowedAmount", "type": "u64"},
+          {"name": "score", "type": "u16"},
+          {"name": "lastEquity", "type": "u64"},
+          {"name": "lastEpochUpdate", "type": "i64"},
+          {"name": "failures", "type": "u16"},
+          {"name": "frozen", "type": "bool"}
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {"code": 6000, "name": "InvalidAmount", "msg": "Invalid amount"},
+    {"code": 6001, "name": "CreditLimitExceeded", "msg": "Credit limit exceeded"},
+    {"code": 6002, "name": "CreditLineFrozen", "msg": "Credit line is frozen"},
+    {"code": 6003, "name": "Overflow", "msg": "Arithmetic overflow"},
+    {"code": 6004, "name": "Underflow", "msg": "Arithmetic underflow"}
+  ]
+}
