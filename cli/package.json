@@ -1,0 +1,27 @@
+{
+  "name": "klaave-cli",
+  "version": "0.1.0",
+  "description": "CLI for Klaave Agent Credit Lines on Solana",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node src/test.ts",
+    "init-pool": "ts-node src/commands/init-pool.ts",
+    "deposit": "ts-node src/commands/deposit.ts",
+    "post-bond": "ts-node src/commands/post-bond.ts",
+    "borrow": "ts-node src/commands/borrow.ts",
+    "update-epoch": "ts-node src/commands/update-epoch.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@solana/web3.js": "^1.95.8",
+    "@solana/spl-token": "^0.4.9",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.2",
+    "ts-node": "^10.9.2"
+  }
+}
