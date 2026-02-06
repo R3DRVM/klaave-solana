@@ -81,9 +81,11 @@ Both versions prove the same thesis: **bond + reputation** beats over-collateral
 
 ## Deployment
 
-**Program ID:** `Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS` (pending deployment)
+**Program ID:** `DNiUvDVUEhZWQNWcidKz86LgmZ3p7DSpR5R7xn2KTxw9`
 
 **Network:** Solana Devnet
+
+**Explorer:** https://explorer.solana.com/address/DNiUvDVUEhZWQNWcidKz86LgmZ3p7DSpR5R7xn2KTxw9?cluster=devnet
 
 ## Usage (Coming Soon)
 

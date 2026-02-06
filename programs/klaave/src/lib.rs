@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, Token, TokenAccount, Transfer};
 
-declare_id!("DTUuKBLR2jpCZmPJXFE2i42XhPL3MkCXqoFK7qxfXc9E");
+declare_id!("DNiUvDVUEhZWQNWcidKz86LgmZ3p7DSpR5R7xn2KTxw9");
 
 #[program]
 pub mod klaave {
