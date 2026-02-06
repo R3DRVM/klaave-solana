@@ -5,10 +5,10 @@ resolution = true
 skip-lint = false
 
 [programs.devnet]
-klaave = "DTUuKBLR2jpCZmPJXFE2i42XhPL3MkCXqoFK7qxfXc9E"
+klaave = "DNiUvDVUEhZWQNWcidKz86LgmZ3p7DSpR5R7xn2KTxw9"
 
 [programs.localnet]
-klaave = "DTUuKBLR2jpCZmPJXFE2i42XhPL3MkCXqoFK7qxfXc9E"
+klaave = "DNiUvDVUEhZWQNWcidKz86LgmZ3p7DSpR5R7xn2KTxw9"
 
 [registry]
 url = "https://api.apr.dev"

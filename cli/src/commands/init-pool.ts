@@ -1,6 +1,6 @@
 #!/usr/bin/env ts-node
 import { Keypair, PublicKey, SystemProgram, Transaction, sendAndConfirmTransaction } from '@solana/web3.js';
-import { TOKEN_PROGRAM_ID, createAccount } from '@solana/spl-token';
+import { TOKEN_PROGRAM_ID, getAssociatedTokenAddress, createAssociatedTokenAccountInstruction } from '@solana/spl-token';
 import { PROGRAM_ID, USDC_MINT, connection } from '../config';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -30,28 +30,34 @@ async function initPool() {
 
   console.log(`Pool PDA: ${poolPda.toBase58()} (bump: ${poolBump})`);
 
-  // Create USDC vault token account (owned by pool PDA)
-  console.log('\n📦 Creating USDC vault...');
-  const vaultAccount = Keypair.generate();
-  
-  const createVaultIx = SystemProgram.createAccount({
-    fromPubkey: authorityKeypair.publicKey,
-    newAccountPubkey: vaultAccount.publicKey,
-    lamports: await connection.getMinimumBalanceForRentExemption(165), // Token account size
-    space: 165,
-    programId: TOKEN_PROGRAM_ID,
-  });
+  // Check if pool already exists
+  const poolInfoPath = path.join(__dirname, '../../pool-info.json');
+  if (fs.existsSync(poolInfoPath)) {
+    const existing = JSON.parse(fs.readFileSync(poolInfoPath, 'utf-8'));
+    console.log('\n⚠️  Pool already initialized!');
+    console.log(`Pool PDA: ${existing.poolPda}`);
+    console.log(`Vault: ${existing.vaultAddress}`);
+    console.log('\nSkipping initialization. Delete pool-info.json to re-initialize.');
+    process.exit(0);
+  }
 
-  // Initialize vault as USDC token account
-  const initVaultIx = await createAccount(
-    connection,
-    authorityKeypair,
+  // Get Associated Token Address for pool PDA (this is deterministic)
+  console.log('\n📦 Creating USDC vault (ATA)...');
+  const vaultAddress = await getAssociatedTokenAddress(
     USDC_MINT,
-    poolPda, // Owner = pool PDA
-    vaultAccount
+    poolPda,
+    true // allowOwnerOffCurve = true (PDA can own ATA)
   );
 
-  console.log(`Vault address: ${vaultAccount.publicKey.toBase58()}`);
+  console.log(`Vault address: ${vaultAddress.toBase58()}`);
+
+  // Create the ATA if it doesn't exist
+  const createAtaIx = createAssociatedTokenAccountInstruction(
+    authorityKeypair.publicKey, // payer
+    vaultAddress,
+    poolPda, // owner
+    USDC_MINT
+  );
 
   // Build initialize_pool instruction
   const initPoolData = Buffer.alloc(9);
@@ -63,20 +69,20 @@ async function initPool() {
     keys: [
       { pubkey: poolPda, isSigner: false, isWritable: true },
       { pubkey: authorityKeypair.publicKey, isSigner: true, isWritable: false },
-      { pubkey: vaultAccount.publicKey, isSigner: false, isWritable: false },
+      { pubkey: vaultAddress, isSigner: false, isWritable: false },
       { pubkey: SystemProgram.programId, isSigner: false, isWritable: false },
     ],
     data: initPoolData,
   };
 
   console.log('\n🚀 Sending transaction...');
-  const tx = new Transaction().add(createVaultIx, initPoolIx);
+  const tx = new Transaction().add(createAtaIx, initPoolIx);
   
   try {
     const signature = await sendAndConfirmTransaction(
       connection,
       tx,
-      [authorityKeypair, vaultAccount],
+      [authorityKeypair],
       { commitment: 'confirmed' }
     );
 
@@ -85,13 +91,13 @@ async function initPool() {
     console.log(`Explorer: https://explorer.solana.com/tx/${signature}?cluster=devnet`);
     console.log(`\n📋 Pool Details:`);
     console.log(`  Pool PDA: ${poolPda.toBase58()}`);
-    console.log(`  USDC Vault: ${vaultAccount.publicKey.toBase58()}`);
+    console.log(`  USDC Vault: ${vaultAddress.toBase58()}`);
     console.log(`  Authority: ${authorityKeypair.publicKey.toBase58()}`);
     
     // Save pool info for other commands
     const poolInfo = {
       poolPda: poolPda.toBase58(),
-      vaultAddress: vaultAccount.publicKey.toBase58(),
+      vaultAddress: vaultAddress.toBase58(),
       authority: authorityKeypair.publicKey.toBase58(),
       bump: poolBump,
     };
